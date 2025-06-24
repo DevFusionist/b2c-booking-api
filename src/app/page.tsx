@@ -1,103 +1,212 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            B2C Booking API
+          </h1>
+          <p className="text-xl text-gray-600">
+            A secure and scalable API for travel booking management
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+            API Endpoints
+          </h2>
+          
+          <div className="space-y-6">
+            {/* Authentication */}
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 mb-3">
+                Authentication
+              </h3>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-green-100 text-green-800 text-sm font-medium rounded">
+                    POST
+                  </span>
+                  <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                    /api/auth/signup
+                  </code>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-green-100 text-green-800 text-sm font-medium rounded">
+                    POST
+                  </span>
+                  <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                    /api/auth/login
+                  </code>
+                </div>
+              </div>
+            </div>
+
+            {/* User Profile */}
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 mb-3">
+                User Profile
+              </h3>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded">
+                    GET
+                  </span>
+                  <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                    /api/user/profile
+                  </code>
+                  <span className="text-xs text-gray-500">(Protected)</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded">
+                    PUT
+                  </span>
+                  <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                    /api/user/profile
+                  </code>
+                  <span className="text-xs text-gray-500">(Protected)</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bookings */}
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 mb-3">
+                Bookings
+              </h3>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded">
+                    GET
+                  </span>
+                  <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                    /api/bookings?status=upcoming
+                  </code>
+                  <span className="text-xs text-gray-500">(Protected)</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded">
+                    GET
+                  </span>
+                  <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                    /api/bookings?status=completed
+                  </code>
+                  <span className="text-xs text-gray-500">(Protected)</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-green-100 text-green-800 text-sm font-medium rounded">
+                    POST
+                  </span>
+                  <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                    /api/bookings/:id/summary
+                  </code>
+                  <span className="text-xs text-gray-500">(Protected, AI)</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Travellers */}
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 mb-3">
+                Travellers
+              </h3>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-green-100 text-green-800 text-sm font-medium rounded">
+                    POST
+                  </span>
+                  <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                    /api/travellers
+                  </code>
+                  <span className="text-xs text-gray-500">(Protected)</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded">
+                    PUT
+                  </span>
+                  <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                    /api/travellers/:traveller_id
+                  </code>
+                  <span className="text-xs text-gray-500">(Protected)</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-red-100 text-red-800 text-sm font-medium rounded">
+                    DELETE
+                  </span>
+                  <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                    /api/travellers/:traveller_id
+                  </code>
+                  <span className="text-xs text-gray-500">(Protected)</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Database Seeding */}
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 mb-3">
+                Database
+              </h3>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-green-100 text-green-800 text-sm font-medium rounded">
+                    POST
+                  </span>
+                  <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                    /api/seed
+                  </code>
+                  <span className="text-xs text-gray-500">(Populate sample data)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white shadow-lg rounded-lg p-8">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+            Setup Instructions
+          </h2>
+          
+          <div className="space-y-4 text-gray-700">
+            <div>
+              <h3 className="font-medium text-gray-900 mb-2">1. Environment Variables</h3>
+              <p className="text-sm">
+                Configure your <code className="bg-gray-100 px-1 rounded">.env.local</code> file with:
+              </p>
+              <ul className="text-sm mt-2 space-y-1 list-disc list-inside">
+                <li>MONGODB_URI - Your MongoDB connection string</li>
+                <li>JWT_SECRET - Secret key for JWT tokens</li>
+                <li>JWT_REFRESH_SECRET - Secret key for refresh tokens</li>
+                <li>OPENAI_API_KEY - OpenAI API key for booking summaries</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="font-medium text-gray-900 mb-2">2. Database Setup</h3>
+              <p className="text-sm">
+                Run <code className="bg-gray-100 px-1 rounded">POST /api/seed</code> to populate the database with sample data.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-medium text-gray-900 mb-2">3. Authentication</h3>
+              <p className="text-sm">
+                Use the sample users or create new ones via signup. Include the access token in the Authorization header as <code className="bg-gray-100 px-1 rounded">Bearer &lt;token&gt;</code> for protected endpoints.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-medium text-gray-900 mb-2">4. Sample Users</h3>
+              <p className="text-sm">
+                After seeding, you can use these credentials:
+              </p>
+              <ul className="text-sm mt-2 space-y-1">
+                <li>Email: john.doe@example.com, Password: password123</li>
+                <li>Email: jane.smith@example.com, Password: password123</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
